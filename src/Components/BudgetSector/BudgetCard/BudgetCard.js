@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, ProgressBar, Stack } from 'react-bootstrap';
 import useBudget from '../../../hooks/useBudget';
 
-const BudgetCard = ({ name, amount, max, onAddExpenseClick}) => {
+const BudgetCard = ({ name, amount, max, onAddExpenseClick, hidebuttons}) => {
     // const { name, amount, max }=budget;
     const { currencyFormatter } = useBudget();
 
@@ -36,22 +36,22 @@ const BudgetCard = ({ name, amount, max, onAddExpenseClick}) => {
             <Card.Title className="d-flex justify-content-between align-items-baseline fw-normal mb-3">
                 <div>{name}</div>
                 <div className="d-flex align-items-baseline">{currencyFormatter.format(amount)}
-                    <span className="text-muted ms-1 fs-6">
+                    {max && <span className="text-muted ms-1 fs-6">
                         / {currencyFormatter.format(max)}
-                    </span>
+                    </span>}
                 </div>
 
             </Card.Title>
-            <ProgressBar className="rounded-pill" variant={progressBarVariant(amount, max)}
+            {max &&<ProgressBar className="rounded-pill" variant={progressBarVariant(amount, max)}
                 min={0}
                 max={max}
-                now={amount} />
-            <Stack direction="horizontal" gap={3} className="mt-4">
+                now={amount} />}
+                {!hidebuttons && <Stack direction="horizontal" gap={3} className="mt-4">
                 <Button className="ms-auto" variant="outline-danger" 
                         onClick={onAddExpenseClick}
                     >Add Expense</Button>
                 <Button variant="outline-secondary">View Expense</Button>
-            </Stack>
+            </Stack>}
             </Card.Body>
             </Card>
     );
