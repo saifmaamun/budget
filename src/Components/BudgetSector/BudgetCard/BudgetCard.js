@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, ProgressBar, Stack } from 'react-bootstrap';
 import useBudget from '../../../hooks/useBudget';
 
-const BudgetCard = ({ name, amount, max, onAddExpenseClick, hidebuttons}) => {
+const BudgetCard = ({ name, amount, max, onAddExpenseClick, hidebuttons, onViewExpenseClick}) => {
     // const { name, amount, max }=budget;
     const { currencyFormatter } = useBudget();
 
@@ -50,7 +50,7 @@ const BudgetCard = ({ name, amount, max, onAddExpenseClick, hidebuttons}) => {
                 <Button className="ms-auto" variant="outline-danger" 
                         onClick={onAddExpenseClick}
                     >Add Expense</Button>
-                <Button variant="outline-secondary">View Expense</Button>
+                    <Button onClick={onViewExpenseClick} variant="outline-secondary">View Expense</Button>
             </Stack>}
             </Card.Body>
             </Card>

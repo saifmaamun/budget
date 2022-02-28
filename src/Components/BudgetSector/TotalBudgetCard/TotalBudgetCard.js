@@ -8,7 +8,7 @@ const TotalBudgetCard = () => {
     const max = budgets.reduce((total, budget) => total + budget.max, 0)
 
 
-    if (amount === 0) return null
+    if (max === 0) return null
     return (
         <BudgetCard
             name="Total"

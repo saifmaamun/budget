@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import AddExpensesModal from '../AddExpensesModal/AddExpensesModal';
 import AddSectorModal from '../AddSectorModal/AddSectorModal';
+import TotalBudgetChart from '../Charts/TotalBudgetChart/TotalBudgetChart';
 
 const Header = () => {
     const [showAddSectorModal, setShowAddSectorModal] = useState(false);
