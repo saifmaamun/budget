@@ -71,7 +71,7 @@ const renderActiveShape = (props) => {
                 y={ey}
                 textAnchor={textAnchor}
                 fill="#333"
-            >{`$ ${value}`}</text>
+            >{`$${value}`}</text>
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
@@ -79,7 +79,7 @@ const renderActiveShape = (props) => {
                 textAnchor={textAnchor}
                 fill="#999"
             >
-                {`(Overall} ${(percent * 100).toFixed(2)}%)`}
+                {`(${(percent * 100).toFixed(0)}%)`}
             </text>
         </g>
     );
@@ -124,20 +124,21 @@ const renderActiveShape = (props) => {
     console.log(data);
     
     return (
-        <Container fluid className="d-flex justify-content-center">
+        <Container className="d-flex p-5 justify-content-center">
+
             <PieChart width={400} height={400}>
                 <Pie
                     activeIndex={activeIndex}
                     activeShape={renderActiveShape}
                     data={expenses}
-                    cx={200}
-                    cy={200}
-                    innerRadius={50}
-                    outerRadius={100}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius="30%"
+                    outerRadius="60%"
                     fill="#8884d8"
                     dataKey="amount"
                     onMouseEnter={onPieEnter}
-                />
+                    />
             </PieChart>
         </Container>
     );
