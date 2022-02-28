@@ -27,6 +27,8 @@ const renderActiveShape = (props) => {
         percent,
         value
     } = props;
+    // const cx = "50%";
+    // const cy = "50%";
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
     const sx = cx + (outerRadius + 10) * cos;
@@ -39,12 +41,15 @@ const renderActiveShape = (props) => {
 
     return (
         <g>
-            <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
+            <text
+                x={cx}
+                y={cy} 
+                dy={8} textAnchor="middle" fill={fill}>
                 {payload.name}
             </text>
             <Sector
                 cx={cx}
-                cy={cy}
+                cy={cy} 
                 innerRadius={innerRadius}
                 outerRadius={outerRadius}
                 startAngle={startAngle}
@@ -124,7 +129,9 @@ const renderActiveShape = (props) => {
     console.log(data);
     
     return (
-        <Container className="d-flex p-5 justify-content-center">
+        // <Container  className="d-flex p-5 justify-content-center">
+            <div style={{ width: '100%', height: 500 }}>
+            <ResponsiveContainer>
 
             <PieChart width={400} height={400}>
                 <Pie
@@ -140,7 +147,9 @@ const renderActiveShape = (props) => {
                     onMouseEnter={onPieEnter}
                     />
             </PieChart>
-        </Container>
+                    </ResponsiveContainer>
+                    </div>
+        //  </Container> 
     );
 
 }
