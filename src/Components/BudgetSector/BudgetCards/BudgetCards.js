@@ -47,6 +47,7 @@ const BudgetCards = () => {
                     ></UncategorizedBudgetCard>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
+                    <br />
                     <TotalBudgetCard></TotalBudgetCard>
                 </Col>
             </Row>
