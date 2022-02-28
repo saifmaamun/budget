@@ -44,7 +44,7 @@ const renderActiveShape = (props) => {
             <text
                 x={cx}
                 y={cy} 
-                dy={8} textAnchor="middle" fill={fill}>
+                dy={8} textAnchor="middle" fill="#FF0A00">
                 {payload.name}
             </text>
             <Sector
@@ -54,7 +54,7 @@ const renderActiveShape = (props) => {
                 outerRadius={outerRadius}
                 startAngle={startAngle}
                 endAngle={endAngle}
-                fill={fill}
+                fill="#FF0A00"
             />
             <Sector
                 cx={cx}
@@ -63,26 +63,26 @@ const renderActiveShape = (props) => {
                 endAngle={endAngle}
                 innerRadius={outerRadius + 6}
                 outerRadius={outerRadius + 10}
-                fill={fill}
+                fill="#FF0A00"
             />
             <path
                 d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
                 stroke={fill}
-                fill="none"
+                fill="#FFF"
             />
             <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
                 textAnchor={textAnchor}
-                fill="#333"
+                fill="#FFf"
             >{`$${value}`}</text>
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
                 dy={18}
                 textAnchor={textAnchor}
-                fill="#999"
+                fill="#FFF"
             >
                 {`(${(percent * 100).toFixed(0)}%)`}
             </text>
@@ -113,17 +113,6 @@ const renderActiveShape = (props) => {
         [setActiveIndex]
     );
 
-
-
-
-
-
-
-
-
-
-
-
     
     const data = getBudgetExpenses(expenses)
     console.log(data);
@@ -142,7 +131,7 @@ const renderActiveShape = (props) => {
                     cy="50%"
                     innerRadius="30%"
                     outerRadius="60%"
-                    fill="#8884d8"
+                        fill="#fff"
                     dataKey="amount"
                     onMouseEnter={onPieEnter}
                     />

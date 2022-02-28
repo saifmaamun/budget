@@ -21,7 +21,7 @@ const Header = () => {
         
         <>
         <Stack direction="horizontal" gap={3} className="my-5">
-         <h1 className="me-auto" >Budgets</h1>
+         <h1 className="me-auto text-white" >Budgets</h1>
          <Button variant="primary" onClick={()=>setShowAddSectorModal(true)} >Add Sector</Button>
                 <Button variant="outline-secondary"
                     onClick={openAddExpensesModal}
